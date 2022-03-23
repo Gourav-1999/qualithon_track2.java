@@ -1,16 +1,17 @@
 package com.qt.qualithon.test;
 
-import java.lang.reflect.Method;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.testng.annotations.*;
-import org.testng.Reporter;
-
-import static org.assertj.core.api.Assertions.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 import com.qt.qualithon.TestSession;
-import com.qt.qualithon.ui.imdb.*;
+import com.qt.qualithon.api.omdb.OMDbAPI;
 import com.qt.qualithon.model.Movie;
-import com.qt.qualithon.api.omdb.*;
+import com.qt.qualithon.ui.imdb.MoviePage;
+import com.qt.qualithon.ui.imdb.WebApp;
 
 /**
  * Test movie web page on imdb and rottentomato to check if the movie data is correct 
@@ -53,7 +54,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles")
+    @Test(dataProvider = "popularMovieTitles",enabled = false)
     public void testSearchByExactMovieTitleReturnsMovieAsFirstResult(String title){
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -71,7 +72,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles")
+    @Test(dataProvider = "popularMovieTitles",enabled = false)
     public void testMovieMetadataOnWebHasCorrectReleaseYear(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -91,7 +92,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles")
+    @Test(dataProvider = "popularMovieTitles",enabled = false)
     public void testMovieMetadataOnWebHasCorrectDirectorName(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -111,7 +112,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles")
+    @Test(dataProvider = "popularMovieTitles",enabled = false)
     public void testMovieMetadataOnWebHasCorrectWriters(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -131,7 +132,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles")
+    @Test(dataProvider = "popularMovieTitles",enabled = true)
     public void testMovieMetadataOnWebHasCorrectGenres(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)

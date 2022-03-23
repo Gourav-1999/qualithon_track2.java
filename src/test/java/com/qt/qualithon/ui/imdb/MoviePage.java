@@ -59,7 +59,7 @@ public class MoviePage extends Page{
             try{
                 if(credit.findElement(By.cssSelector("span")).getText().equalsIgnoreCase("Director")){
                     // find director name from child element of section
-                    return credit.findElement(By.cssSelector("a")).getText();
+                    return credit.findElement(By.xpath("(//*[@class=\"ipc-metadata-list-item__content-container\"]//ul//li//a)[1]")).getText();
                 }
             }catch(NoSuchElementException e){}
         }
@@ -89,7 +89,7 @@ public class MoviePage extends Page{
     public String releaseYear(){
         return this.testSession.driverWait().until(
             ExpectedConditions.presenceOfElementLocated(
-                By.cssSelector("ul[data-testid='hero-title-block__metadata']")
+                By.xpath("(//*[@data-testid=\"hero-title-block__metadata\"]//a)[1]")
             ) 
         ).getText();
     }
