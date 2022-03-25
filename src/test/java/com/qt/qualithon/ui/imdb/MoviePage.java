@@ -125,5 +125,21 @@ public class MoviePage extends Page{
         }
         return writers;
     }
+    
+    public String ratingScore() {
+    	return this.testSession.driverWait().until(
+                ExpectedConditions.presenceOfElementLocated(
+                    By.xpath("(//*[@class=\"sc-7ab21ed2-1 jGRxWM\"])[1]")
+                ) 
+            ).getText();
+    }
+    
+    public String matureRating() {
+    	return this.testSession.driverWait().until(
+                ExpectedConditions.presenceOfElementLocated(
+                    By.xpath("//*[@data-testid=\"hero-title-block__metadata\"]//child::li[2]//a")
+                ) 
+            ).getText();
+    }
 
 }

@@ -12,6 +12,8 @@ public class Movie{
     String title;
     String releaseYear;
     String director;
+    String rating;
+    String rate;
     List<String> genres;
     List<String> writers;
 
@@ -140,6 +142,20 @@ public class Movie{
     public List<String> writers(){
         return this.writers;
     }
+    
+    public void setRating(String rating) {
+    	this.rating=rating;
+    }
+    public String rating() {
+    	return this.rating;
+    }
+    
+    public void setmatureRating(String rate) {
+    	this.rate=rate;
+    }
+    public String rate() {
+    	return this.rate;
+    }
 
     /**
      * a pretty formated representation of movie metadata
@@ -149,7 +165,9 @@ public class Movie{
     public String toString(){
       return "Title: " + this.title + " (" + this.releaseYear + ")" + "\n"
             +"Director: " + this.director + "\n"
+            +"Rating: " + this.rating + "\n"
+            +"Rate: " + this.rate + "\n"
             +"Genres: " + String.join(",", this.genres) + "\n" 
-            +"Writers: " + String.join(",", this.writers); 
+            +"Writers: " + String.join(",", this.writers);
     }
 }

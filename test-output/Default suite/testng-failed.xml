@@ -6,8 +6,6 @@
       <class name="com.qt.qualithon.test.MovieSearchTest">
         <methods>
           <include name="testSessionSetUp"/>
-          <include name="testMovieMetadataOnWebHasCorrectGenres" invocation-numbers="0 1"/>
-          <include name="testMovieMetadataOnWebHasCorrectMaturityRating" invocation-numbers="0 1"/>
           <include name="testTearDown"/>
           <include name="testMovieMetadataOnWebHasCorrectMovieRatingScore" invocation-numbers="0 1"/>
         </methods>
