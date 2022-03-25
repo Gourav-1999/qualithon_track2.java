@@ -54,7 +54,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles",enabled = false)
+    @Test(dataProvider = "popularMovieTitles",enabled = true)
     public void testSearchByExactMovieTitleReturnsMovieAsFirstResult(String title){
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -72,7 +72,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles",enabled = false)
+    @Test(dataProvider = "popularMovieTitles",enabled = true)
     public void testMovieMetadataOnWebHasCorrectReleaseYear(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -92,7 +92,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles",enabled = false)
+    @Test(dataProvider = "popularMovieTitles",enabled = true)
     public void testMovieMetadataOnWebHasCorrectDirectorName(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -112,7 +112,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles",enabled = false)
+    @Test(dataProvider = "popularMovieTitles",enabled = true)
     public void testMovieMetadataOnWebHasCorrectWriters(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -122,7 +122,10 @@ public class MovieSearchTest {
 
         // get Movie metadata from http://www.omdbapi.com/
         Movie movie = new OMDbAPI().getMovie(title);
+//        if(movieOnImdbWeb.writers().containsAll(movie.writers()) && (movie.writers().containsAll(movieOnImdbWeb.writers())))
+//        assertThat(true);
         assertThat(movieOnImdbWeb.writers()).isEqualTo(movie.writers());
+        	
     }
 
     /**
@@ -132,7 +135,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles",enabled = false)
+    @Test(dataProvider = "popularMovieTitles",enabled = true)
     public void testMovieMetadataOnWebHasCorrectGenres(String title) throws Exception {
         // get MoviePage from imdb/rottentomato
         MoviePage movieOnImdbWeb = new WebApp(this.testSession)
@@ -172,7 +175,7 @@ public class MovieSearchTest {
      * @param   title   movie title to search
      *
      **/
-    @Test(dataProvider = "popularMovieTitles", enabled = false)
+    @Test(dataProvider = "popularMovieTitles", enabled = true)
     public void testMovieMetadataOnWebHasCorrectMovieRatingScore(String title) throws Exception {
         // NOT IMPLEMENTED
     	 // get MoviePage from imdb/rottentomato

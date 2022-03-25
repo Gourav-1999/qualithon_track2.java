@@ -7,7 +7,7 @@
         <methods>
           <include name="testSessionSetUp"/>
           <include name="testTearDown"/>
-          <include name="testMovieMetadataOnWebHasCorrectMovieRatingScore" invocation-numbers="0 1"/>
+          <include name="testMovieMetadataOnWebHasCorrectWriters" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- com.qt.qualithon.test.MovieSearchTest -->
     </classes>
